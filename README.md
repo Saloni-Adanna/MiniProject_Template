@@ -16,3 +16,19 @@
 * Static code analysis using cppcheck
 * Dynamic Code analysis using Valgrind
 
+
+Instructions to setup gitinspector[linux]
+
+Install Python 2 (It's a dependency)
+sudo apt install python
+Remove system package (Short story, it's messed up)
+sudo apt -y remove gitinspector
+Clone the repo from github to any directory and add it to path
+git clone https://github.com/ejwa/gitinspector.git
+cd gitinspector
+echo "export PATH=$(pwd):"'$PATH' >> ~/.profile
+source ~/.profile
+Run gitinspector with "gitinspector.py" like so
+gitinspector.py -wTHl --format=htmlembedded -f c,h,md,yml,* path/to/your/repo > result.html
+You can open the result.html file in a web browser to see the results
+
